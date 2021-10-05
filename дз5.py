@@ -8,6 +8,8 @@ elif x < 0 and y < 0:
     print("это третья четверть")
 elif x > 0 and y < 0:
     print("это четвертая четверть")
+elif x==0 and y==0:
+    print("точка лежит в начале координат")
 elif y == 0:
     print("Точка лежит на оси X")
 elif x == 0:
