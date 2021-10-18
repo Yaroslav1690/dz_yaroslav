@@ -2,6 +2,6 @@ a = input("Введите элемент")
 b = list()
 while a != '':
     b.append(a)
-    a = (input())
+    a = input()
 else:
     print(b)
