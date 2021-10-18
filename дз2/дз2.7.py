@@ -1,4 +1,5 @@
 from random import randint
+
 b = randint(0, 100)
 a = int(input("загадайте число"))
 while a != b:
@@ -9,4 +10,3 @@ while a != b:
         print("загаданное число меньше")
     else:
         print("вы угадали число!")
-    
