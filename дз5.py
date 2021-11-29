@@ -10,7 +10,7 @@ def poisk(d, a):
         elif d[mid] > a:
             high = mid - 1
         elif d[mid] < a:
-            low = high + 1
+            low = mid + 1
     return None
 
 
