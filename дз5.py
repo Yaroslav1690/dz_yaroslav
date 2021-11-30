@@ -13,9 +13,9 @@ def poisk(d, a):
     return None
 
 
-
-a = int(input("Введите искомый элемент: "))
+a = int(input("Введите искомый элемент"))
 print(poisk(d, a))
-assert poisk([], 6) == None
-assert poisk([1, 2, 3, 4, 5, 6, 7, 8, 9], 0) == None
+assert poisk([], 6) is None
+assert poisk([1, 2, 3, 4, 5, 6, 7, 8, 9], 0) is None
 assert poisk([1, 1, 2, 2, 3, 3, 4, 5, 6, 7, 8, 9], 1) == 0
+assert poisk([5, 5], 5) == 0
