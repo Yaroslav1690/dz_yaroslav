@@ -19,4 +19,4 @@ a = int(input("Введите искомый элемент: "))
 print(poisk(d, a))
 assert poisk([], 6) == None
 assert poisk([3, 7, 1, 8, 5, 9, 2, 4, 6], 0) == None
-assert poisk([3, 7, 1, 3, 1, 4, 7, 8, 5, 9, 4, 6, 2, 4, 8], 8) == 13
+assert poisk([3, 7, 1, 3, 1, 4, 7, 2, 8, 5, 9, 4, 6, 2, 4, 8], 8) == 13
