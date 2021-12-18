@@ -6,12 +6,14 @@ def poisk(d, a):
         mid = (low + high) // 2
         if d[mid] >= a:
             high = mid
+        elif d[high] == a:
+            return high
         else:
             low = mid
-    if high >= 0 and d[high] == a:
-        return high
-    else:
+    if high <= low:
         return None
+    elif d[high] == a:
+        return high
 
     
 
