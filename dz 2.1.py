@@ -8,8 +8,9 @@ class Fraction:
         self.den = int(input("введите знаменатель"))
         if self.den == 0:
             raise ValueError("знаменатель не может быть равен нулю")
+    
     def __str__(self):
-        return str(self.num) + '/' + str(self.den)
+        return f"{self.num}/{self.den}"
 
 
 a1 = Fraction()
