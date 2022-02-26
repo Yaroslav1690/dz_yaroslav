@@ -7,12 +7,11 @@ class Fraction:
         self.num = int(input("введите числитель"))
         self.den = int(input("введите знаменатель"))
         if self.den == 0:
-           print("ошибка, знаменатель не может быть равен нулю")
-        else:
-            self.den != 0
-    
+            raise ValueError("знаменатель не может быть равен нулю")
     def __str__(self):
-        return str(self.num)+'/'+str(self.den)
+        return str(self.num) + '/' + str(self.den)
+
+
 a1 = Fraction()
 print(a1)
 
@@ -22,4 +21,3 @@ print(a2)
 a3 = Fraction()
 a3.input()
 print(a3)
-
