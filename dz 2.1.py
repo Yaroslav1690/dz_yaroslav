@@ -16,7 +16,7 @@ class Fraction:
 a1 = Fraction()
 print(a1)
 
-a2 = Fraction(6,7)
+a2 = Fraction(6, 7)
 print(a2)
 
 a3 = Fraction()
