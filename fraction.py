@@ -1,5 +1,4 @@
 import math
-from math import *
 
 
 class Error:
@@ -14,7 +13,7 @@ class Fraction:
     def inner(self) -> None:
         self.num = int(input('Введите числитель '))
         self.den = int(input('Введите знаменатель '))
-        if self.den == 0:
+        if not self.den:
             raise Error
     def __str__(self) -> str:
         return f"{self.num}/{self.den}"
@@ -43,17 +42,19 @@ class Fraction:
         return Fraction(m, n)
 
     def reduce(self) -> None:
-        if self.num == 0:
-            return
+        m = self.__gcd(self.den, self.num)
+        if self.den < 0:
+            self.num = -self.num
+            self.den = -self.den
         m = self.__gcd(self.den, self.num)
         self.den = self.den // m
         self.num = self.num // m
 
 
-    def __lcm(self, a, b):
+    def __lcm(self, a, b) -> int:
         return math.lcm(a, b)
 
-    def __gcd(self, a, b):
+    def __gcd(self, a, b) -> int:
         return math.gcd(a, b)
 
 

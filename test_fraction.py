@@ -1,5 +1,5 @@
 from app.fraction import Fraction
-
+import pytest
 
 def test_reduce():
     d = Fraction(5, 10)
@@ -12,26 +12,64 @@ def test___str__():
     k = Fraction(1, 17)
     assert str(k) == "1/17"
 
-
-def test_sub():
-    m = Fraction(1, 3)
-    n = Fraction(1, 6)
-    assert m - n == Fraction(1, 6)
-
-
-def test_add():
-    m = Fraction(1, 6)
-    n = Fraction(2, 3)
-    assert m + n == Fraction(5, 6)
+a = ([Fraction(1, 1), Fraction(1, 1)])
+b = ([Fraction(-1, 1), Fraction(1, 1)])
+c = ([Fraction(1, -1), Fraction(-1, 1)])
+d = ([Fraction(-1, 1), Fraction(-1, 1)])
+e = ([Fraction(-1, -1), Fraction(-1, -1)])
 
 
-def test_mul():
-    a = Fraction(2, 7)
-    b = Fraction(1, 3)
-    assert a * b == Fraction(2, 21)
+@pytest.mark.parametrize(
+    ('a', 'b', 'c'), [
+        [*a, Fraction(0, 1)],
+        [*b, Fraction(-2, 1)],
+        [*c, Fraction(0, 1)],
+        [*d, Fraction(0, 1)],
+        [*e, Fraction(0, 1)]
+    ] )
 
 
-def test_truediv():
-    a = Fraction(5, 11)
-    b = Fraction(1, 2)
-    assert a / b == Fraction(10, 11)
+def test_sub(a, b, c):
+   assert a - b == c
+
+
+@pytest.mark.parametrize(
+    ('a', 'b', 'c'), [
+        [*a, Fraction(2, 1)],
+        [*b, Fraction(0, 1)],
+        [*c, Fraction(-2, 1)],
+        [*d, Fraction(-2, 1)],
+        [*e, Fraction(2, 1)]
+    ] )
+
+
+def test_add(a, b, c):
+   assert a + b == c
+
+
+@pytest.mark.parametrize(
+    ('a', 'b', 'c'), [
+        [*a, Fraction(1, 1)],
+        [*b, Fraction(-1, 1)],
+        [*c, Fraction(-1, -1)],
+        [*d, Fraction(1, 1)],
+        [*e, Fraction(1, 1)]
+    ] )
+
+
+def test_mul(a, b, c):
+    assert a * b == c
+
+
+@pytest.mark.parametrize(
+    ('a', 'b', 'c'), [
+        [*a, Fraction(1, 1)],
+        [*b, Fraction(-1, 1)],
+        [*c, Fraction(1, 1)],
+        [*d, Fraction(-1, -1)],
+        [*e, Fraction(1, 1)]
+    ] )
+
+
+def test_truediv(a, b, c):
+    assert a / b == c
