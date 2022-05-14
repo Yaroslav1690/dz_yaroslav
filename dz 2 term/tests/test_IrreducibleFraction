@@ -1,0 +1,14 @@
+from app.fraction import IrreducibleFraction
+
+
+def test_irreduceable():
+    q = IrreducibleFraction(2, 4)
+    assert q == IrreducibleFraction(1, 2)
+
+
+def test_inner(mocker):
+    mocker.patch('builtins.input', side_effect=['5', '10'])
+    f = IrreducibleFraction()
+    f.input()
+    assert f == IrreducibleFraction(1, 2)
+    
