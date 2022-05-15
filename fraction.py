@@ -10,13 +10,19 @@ class Fraction:
     def __init__(self, num: int = 0, den: int = 1) -> None:
         self.den = den
         self.num = num
+
+
     def inner(self) -> None:
         self.num = int(input('Введите числитель '))
         self.den = int(input('Введите знаменатель '))
         if not self.den:
             raise Error
+
     def __str__(self) -> str:
         return f"{self.num}/{self.den}"
+
+    def __int__(self) -> str:
+        return f"{self.num}/{1}"
 
     def __eq__(self, other: "Fraction") -> bool:
         return self.num == other.num and self.den == other.den
@@ -42,14 +48,12 @@ class Fraction:
         return Fraction(m, n)
 
     def reduce(self) -> None:
-        m = self.__gcd(self.den, self.num)
         if self.den < 0:
             self.num = -self.num
             self.den = -self.den
         m = self.__gcd(self.den, self.num)
         self.den = self.den // m
         self.num = self.num // m
-
 
     def __lcm(self, a, b) -> int:
         return math.lcm(a, b)
@@ -58,10 +62,13 @@ class Fraction:
         return math.gcd(a, b)
 
 
-class IrreducibleFraction(Fraction):
+
+class IrreduceableFraction(Fraction):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.reduce()
 
-
+    def inner(self, *args, **kwargs) -> None:
+        super().inner()
+        self.reduce()
       
