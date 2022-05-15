@@ -10,7 +10,7 @@ e = ([Fraction(-1, -1), Fraction(-1, -1)])
 f = ([Fraction(1), Fraction(1, 2)])
 g = ([Fraction(-1), Fraction(1, 2)])
 h = ([Fraction(1), Fraction(-1, 2)])
-k = ([Fraction(-1), Fraction(-1, -2)])
+i = ([Fraction(-1), Fraction(-1, -2)])
 
 def test_reduce():
     d = Fraction(5, 10)
@@ -34,7 +34,7 @@ def test_str():
         [*f, Fraction(1, 2)],
         [*g, Fraction(-3, 2)],
         [*h, Fraction(3, 2)],
-        [*k, Fraction(-3, 2)]
+        [*i, Fraction(-3, 2)]
     ])
 def test_sub(a, b, c):
    assert a - b == c
@@ -50,7 +50,7 @@ def test_sub(a, b, c):
         [*f, Fraction(3, 2)],
         [*g, Fraction(-1, 2)],
         [*h, Fraction(1, 2)],
-        [*k, Fraction(-1, 2)]
+        [*i, Fraction(-1, 2)]
     ])
 def test_add(a, b, c):
     assert a + b == c
@@ -66,7 +66,7 @@ def test_add(a, b, c):
         [*f, Fraction(1, 2)],
         [*g, Fraction(-1, 2)],
         [*h, Fraction(-1, 2)],
-        [*k, Fraction(-1, 2)]
+        [*i, Fraction(-1, 2)]
     ])
 def test_mul(a, b, c):
     assert a * b == c
@@ -81,7 +81,7 @@ def test_mul(a, b, c):
         [*e, Fraction(1, 1)],
         [*f, Fraction(2, 1)],
         [*g, Fraction(-2, 1)],
-        [*h, Fraction(-2, 1)],
+        [*i, Fraction(-2, 1)],
         [*k, Fraction(-2, 1)]
     ])
 def test_truediv(a, b, c):
